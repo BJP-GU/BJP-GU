@@ -1,0 +1,40 @@
+---
+title: "In Class 2/10"
+author: "Bryce J. Parsons"
+date: "2/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Reading the excel file 
+```{r}
+library(readxl)
+mydiamonds<-read_excel("diamonds.xlsx")
+summary("diamonds.xlsx")
+```
+
+#Names of Variables 
+```{r}
+names(mydiamonds)
+```
+
+#Top 6 Observations (Head Command)
+```{r}
+head(mydiamonds)
+```
+
+#Structure of Data Set
+```{r}
+structure(mydiamonds)
+```
+
+#Combining Price & Table
+```{r}
+mydiamonds$pricetable<-mydiamonds$price + mydiamonds$table
+head(mydiamonds$pricetable)
+summary(mydiamonds$pricetable)
+```
+
